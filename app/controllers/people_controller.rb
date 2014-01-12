@@ -1,14 +1,26 @@
 class PeopleController < ApplicationController
+  include ActionController::MimeResponds
   # GET /people
   # GET /people.json
   def index
-    @person0 = Person.new(:name => "Adam", :surname => "Kowalski")
-    #@person1 = Person.new("Jan", "Nowak")
-    @person0.save
-    #person1.save
     @people = Person.all
+    respond_to do |format|
+      format.json { render json: @people }
+    end
+  end
 
-    render json: @people
+  def create_sample_data
+    @sample_list = []
+    @sample_list.append(Person.new(:name => "Adam", :surname => "Kowalski"))
+    @sample_list.append(Person.new(:name => "Jan", :surname => "Nowak"))
+    @sample_list.append(Person.new(:name => "Anna", :surname => "Kwiatkowska"))
+    @sample_list.append(Person.new(:name => "Ignacy", :surname => "Zielinski"))
+    @sample_list.append(Person.new(:name => "Sylwia", :surname => "Pawlowska"))
+    @sample_list.append(Person.new(:name => "Kazimierz", :surname => "Zawadzki"))
+    @sample_list.append(Person.new(:name => "Dominika", :surname => "Kucharska"))
+    @sample_list.each do |p|
+      p.save
+    end
   end
 
   # GET /people/1
