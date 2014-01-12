@@ -3,15 +3,21 @@ development:
   encoding: unicode
   database: backend_development
   pool: 5
+  username: simple_backend_app
+  password:
 
 test:
   adapter: postgresql
   encoding: unicode
   database: backend_test
   pool: 5
+  username: simple_backend_app
+  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: backend_production
   pool: 5
+  username: simple_backend_app
+  password:
