@@ -6,11 +6,12 @@ gem 'rails', '4.0.2'
 gem 'rails-api'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-gem 'pg'
+#gem 'sqlite3'
+
 
 group :production do
   gem 'shelly-dependencies'
+  gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
