@@ -11,8 +11,10 @@ gem 'rails-api'
 
 group :production do
   gem 'shelly-dependencies'
-  gem 'pg'
+  
 end
+
+gem 'pg'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
